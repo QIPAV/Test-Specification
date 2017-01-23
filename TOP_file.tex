@@ -1,0 +1,174 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[]{fullpage}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{tabu}
+\usepackage{graphicx}
+\usepackage{subfiles}
+\usepackage{blindtext}
+\usepackage{lipsum}
+\usepackage{color, colortbl}
+\usepackage{xcolor}
+\usepackage{tikz} 
+\usepackage{eso-pic}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{placeins}
+\usepackage{hyperref}
+
+\author{Aleksander Holthe  \\ Katrine Sundal Haune \\ Kent Kjeldaas \\ Stian Fredriksen \\ Tomas Lyngroth \\ Vanja Katinka Halvorsen}
+
+\makeatletter
+\let\vapiqteam\@author
+\let\thedate\@date
+
+\definecolor{cadetgrey}{rgb}{0.57, 0.64, 0.69}      % Dark Color
+\definecolor{gainsboro}{rgb}{0.86, 0.86, 0.86}      % Light Color
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\testcard}[9]{
+\begin{table}[ht]
+\begin{tabularx}{\linewidth}{| p{0.26\textwidth} p{0.15\textwidth} p{0.15\textwidth} p{0.15\textwidth} p{0.16\textwidth} |}
+\hline 
+
+        \rowcolor{cadetgrey}
+        \multicolumn{5}{|l|}{} \\
+        \rowcolor{cadetgrey} 
+        \centering \Large{Test ID:} & \centering\Large{AC ID:} & \centering\Large{Sprint:} & \centering\Large{BL ID} & 
+        \centering\Large{Jira ID: } \\  
+        &\cellcolor{gainsboro}&\cellcolor{gainsboro}&\cellcolor{gainsboro} &\cellcolor{gainsboro} & \cellcolor{gainsboro} \\
+        \textbf{#1}\cellcolor{gainsboro}\centering  & \textbf{#2}\cellcolor{gainsboro}\centering & \textbf{#3}\cellcolor{gainsboro}\centering & \textbf{#4}\cellcolor{gainsboro}\centering & \textbf{#5}\cellcolor{gainsboro}\centering \\ &\hline 
+        \textbf{Acceptance Criteria:}\cellcolor{gainsboro} &  \multicolumn{4}{|l|}{}  \\   
+        \textbf{}\cellcolor{gainsboro} &  \multicolumn{4}{|l|}{#6}  \\ [10pt] \hline 
+        \textbf{Verification Procedure:}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{} \\  
+        \textbf{}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{#7} \\ [10pt] \hline
+        \textbf{Result(s)/Report(s):}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{} \\
+        \textbf{}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{#8} \\ [10pt] \hline
+        \textbf{Performed By:}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{} \\ 
+        \textbf{}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{#9} \\ [10pt]
+        \hline
+\end{tabularx}
+\end{table}
+\FloatBarrier}
+%%   Template  
+% \testcard{Test ID}{AC ID}{Sprint}{BL ID}{Jira ID}{Acceptance Criteria}{Verification Method}{Results/Reports}{Performed by}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%% FRONT PAGE
+\begin{titlepage}
+    \centering
+    \pagecolor{gainsboro}
+    \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,inner sep=7pt] at (current page.north east)
+        {\includegraphics[scale=0.4]{VAPIQ-PICTURES/LogoMerged3}};        
+    \end{tikzpicture}
+	\\[3.0 cm]
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width = 0.35\textwidth]{VAPIQ-PICTURES//Logo2_Tilted.png}
+        \\[2.0 cm] 
+    \end{figure}                              
+    \textsc{\Huge Test Specification}  
+    \\[4 cm]
+    %\textsc{\Large EXTRA NAME}   
+    %\\[3.0 cm]
+	\large \vapiqteam      
+\end{titlepage}
+\pagecolor{white}
+
+
+%% DOCUMENT HISTORY TABLE
+%%% This table should be updated with all major changes
+%%%% OBS! When syncing with Github, remember to leave comment corresponding with version number from this table
+\begin{center}
+\section*{\textbf{Document History}}
+\begin{tabular}{cllll}
+\rowcolor{cadetgrey}
+\textbf{Version:}    &\textbf{Date:} 	 &\textbf{Comment:}    &\textbf{Done by:}   &\textbf{Approved by:}  \\
+
+0.0       & $07.01.17$   & Created .tex-file, standard front page, & VKH  & VKH \\
+ \rowcolor{gainsboro}
+0.1       & $20.01.17$   & Started Introduction and document system  & VKH    & VKH          \\
+
+0.2       & $21.01.17$   & what was done  & Name    & Name          \\ \rowcolor{gainsboro}
+0.3       & $00.00.00$   & what was done  & Name    & Neme          \\
+\end{tabular}                                                                   
+\end{center}
+
+\vspace*{3.0 cm}
+
+%% ACRONYMS
+\begin{center}
+\section*{\textbf{Acronyms}}
+\begin{tabular}{ll}
+\rowcolor{cadetgrey}
+    &   \\
+Aleksander Holthe      & AH     
+ \\\rowcolor{gainsboro}
+Katrine Sundal Haune  & KSH \\
+Kent Kjeldaas         & KK 
+ \\\rowcolor{gainsboro}
+Stian Fredriksen      & SF  \\
+Tomas Lyngroth       & TL   
+ \\\rowcolor{gainsboro}
+Vanja Katinka Halvorsen     & VKH   \\
+Variable Pitch Quadcopter   & VAPIQ
+\end{tabular}                                                             
+\end{center}
+
+\vspace*{2.0 cm}
+
+%% ABRIVIATIONS
+\begin{center}
+\section*{\textbf{Abbreviations}}
+\begin{tabular}{ll}
+\rowcolor{cadetgrey}
+    &   \\
+Electronic Speed Control      & ESC          \\\rowcolor{gainsboro}
+Kongsberg Innovation Center & KIC \\
+Massachusetts Institute of Technology       & MIT
+\\\rowcolor{gainsboro}
+Norwegian Defence Research Establishment   & NDRE \\
+Revolutions per minute      & RPM         
+\\\rowcolor{gainsboro}
+Unmanned aerial vehicle     & UAV   \\
+\end{tabular}                                                             
+\end{center}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ABSTRACT
+%\subfile{Sections/Abstract}
+%\newpage
+
+% LIST OF STUFF
+%\tableofcontents
+%\listoffigures
+%\newpage
+
+%% SEE MAL-file
+
+%INTRODUCTION 
+\subfile{Sections/Introduction}
+\newpage
+
+% CHAPTERs:
+\subfile{Sections/Test_Cards}
+\newpage
+
+% CHAPTERs:
+\subfile{Sections/Test_Report}
+\newpage
+
+%References
+\subfile{Sections/References}
+%\subfile{Sections/references}
+%\newpage
+
+
+
+\end{document}
