@@ -17,6 +17,7 @@
 \usepackage{placeins}
 \usepackage{hyperref}
 
+
 \author{Aleksander Holthe  \\ Katrine Sundal Haune \\ Kent Kjeldaas \\ Stian Fredriksen \\ Tomas Lyngroth \\ Vanja Katinka Halvorsen}
 
 \makeatletter
@@ -46,7 +47,7 @@
         \textbf{Result(s)/Report(s):}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{} \\
         \textbf{}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{#8} \\ [10pt] \hline
         \textbf{Performed By:}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{} \\ 
-        \textbf{}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{#9} \\ [10pt]
+        \textbf{}\cellcolor{gainsboro} & \multicolumn{4}{|l|}{#9} \\ 
         \hline
 \end{tabularx}
 \end{table}
@@ -54,6 +55,32 @@
 %%   Template  
 % \testcard{Test ID}{AC ID}{Sprint}{BL ID}{Jira ID}{Acceptance Criteria}{Verification Method}{Results/Reports}{Performed by}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tr}[6]{
+\begin{table}[ht]
+\begin{tabularx}{\linewidth}{| p{0.26\textwidth} p{0.15\textwidth} p{0.15\textwidth} p{0.15\textwidth} p{0.16\textwidth} |}
+\hline 
+
+        \rowcolor{cadetgrey}
+        \multicolumn{5}{|l|}{} \\
+        \rowcolor{cadetgrey} 
+        \centering \Large{Test ID:} & \centering\Large{AC ID:} & \centering\Large{Sprint:} & \centering\Large{BL ID} & 
+        \centering\Large{Jira ID: } \\  
+        &\cellcolor{gainsboro}&\cellcolor{gainsboro}&\cellcolor{gainsboro} &\cellcolor{gainsboro} & \cellcolor{gainsboro} \\
+        \textbf{#1}\cellcolor{gainsboro}\centering  & \textbf{#2}\cellcolor{gainsboro}\centering & \textbf{#3}\cellcolor{gainsboro}\centering & \textbf{#4}\cellcolor{gainsboro}\centering & \textbf{#5}\cellcolor{gainsboro}\centering \\ &\hline 
+        \textbf{Acceptance Criteria:}\cellcolor{gainsboro} &  \multicolumn{4}{|l|}{}  \\  
+        \textbf{}\cellcolor{gainsboro} &  \multicolumn{4}{|l|}{#6}  \\ [10pt]  
+        \hline
+\end{tabularx}
+\end{table}
+\FloatBarrier}
+%%   Template  
+% \testcard{Test ID}{AC ID}{Sprint}{BL ID}{Jira ID}{Acceptance Criteria}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 \begin{document}
 
@@ -94,10 +121,12 @@
 0.1       & $20.01.17$   & Started Introduction and document system  & VKH    & VKH \\
 
 0.2       & $21.01.17$   & Chapters are divided into two documents & VKH    & VKH   \\
-          &              & All text and chapters are changed.       &       &\\
-          &              & Test Cases are added                     &       & \\
+          &              & All text and chapters are changed.       &       &\\ \rowcolor{gainsboro}
+0.3      & $21.01.17$              & Test Cases are added       &   VKH    & SF \\
+0.4      & $23.01.17$   & Input on for Test Report TR001        & AH        & VKH \\\rowcolor{gainsboro}
+0.5     & $23.01.17$    & Chapters are done         & VKH   & VKH \\
+1.0     & $24.01.17$    & Official Test Specification & VKH & SF \\
 \rowcolor{gainsboro}
-0.3       & $22.01.17$   & what was done  & VKH    & Neme          \\
 \end{tabular}                                                                   
 \end{center}
 
@@ -122,24 +151,9 @@ Variable Pitch Quadcopter   & VAPIQ
 \end{tabular}                                                             
 \end{center}
 
+
 \vspace*{2.0 cm}
 
-%% ABRIVIATIONS
-\begin{center}
-\section*{\textbf{Abbreviations}}
-\begin{tabular}{ll}
-\rowcolor{cadetgrey}
-    &   \\
-Electronic Speed Control      & ESC          \\\rowcolor{gainsboro}
-Kongsberg Innovation Center & KIC \\
-Massachusetts Institute of Technology       & MIT
-\\\rowcolor{gainsboro}
-Norwegian Defence Research Establishment   & NDRE \\
-Revolutions per minute      & RPM         
-\\\rowcolor{gainsboro}
-Unmanned aerial vehicle     & UAV   \\
-\end{tabular}                                                             
-\end{center}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -149,9 +163,9 @@ Unmanned aerial vehicle     & UAV   \\
 %\newpage
 
 % LIST OF STUFF
-%\tableofcontents
+\tableofcontents
 %\listoffigures
-%\newpage
+\newpage
 
 %% SEE MAL-file
 
@@ -160,17 +174,21 @@ Unmanned aerial vehicle     & UAV   \\
 \newpage
 
 % CHAPTERs:
-\subfile{Sections/Test_Cards}
+\subfile{Sections/Test_Cards_S1}
+\newpage
+
+% CHAPTERs:
+\subfile{Sections/Test_Cards_S2}
+\newpage
+
+% CHAPTERs:
+\subfile{Sections/Test_Cards_S3}
 \newpage
 
 % CHAPTERs:
 \subfile{Sections/Test_Report}
 \newpage
 
-%References
-\subfile{Sections/References}
-%\subfile{Sections/references}
-%\newpage
 
 
 
