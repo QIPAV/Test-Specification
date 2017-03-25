@@ -2,7 +2,7 @@
 \subsection*{T001}
 \testcard{T001}{AC001}{1}{BL013}{VPQ-29}
          {\shortstack[l]{GIVEN that we have arduino car. WHEN we run arduino script. \\                                 THEN the car will move as descripted in the code.}}
-         {\shortstack[l]{Inspection, observe that the arduino car moves as descripted.\\                      }}
+         {\shortstack[l]{Inspection, observe that the arduino car moves as descripted.\\}}
          {\shortstack[l]{}}
          {\shortstack[l]{}}
 \subsection*{T002}
@@ -20,6 +20,17 @@
          {\shortstack[l]{Inspection, view position feed for 6DOF in the python output}}
          {\shortstack[l]{}}
          {\shortstack[l]{}}
+         
+\testcard{T006}{AC006}{1}{BL011}{VPQ-12}
+         {\shortstack[l]{GIVEN that we have a working simulation. WHEN we change initial  \\
+                         parameters (Ex: mass). THEN the quadrotor simulation shall move\\
+                         along specified path.
+                }}
+         {\shortstack[l]{}}
+         {\shortstack[l]{}}
+         {\shortstack[l]{}}
+         
+         
        
 \subsection*{T007}
 \testcard{T007}{AC007}{1}{BL012}{VPQ-21}
@@ -28,6 +39,8 @@
          {\shortstack[l]{}}
          {\shortstack[l]{}}
          {\shortstack[l]{}}
+         
+         
 \subsection*{T008}
 \testcard{T008}{AC008}{1}{BL012}{VPQ-21}
          {\shortstack[l]{GIVEN that we have an estimated mass AND that we have four motors.\\ 
@@ -49,9 +62,16 @@
          {\shortstack[l]{}}
          {\shortstack[l]{}}
          
-
-
-
+         
+\testcard{T014}{AC017}{5}{BL035 BL036}{VPQ-184 VPQ-120}
+         {\shortstack[l]{GIVEN that we have a servo connected to a a variable pitch mechanism, \\ 
+                         WHEN we send command for desired pitch angle in code,  THEN the \\
+                         servo shall stay in this position until another command is provided }}
+         {\shortstack[l]{}}
+         {\shortstack[l]{TR006}}
+         {\shortstack[l]{}}
+         
+         
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TR

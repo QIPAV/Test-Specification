@@ -3,12 +3,13 @@
 % \testcard{Test ID}{AC ID}{Sprint}{BL ID}{Jira ID}{Acceptance Criteria}{Verification Procedure}{Results/Reports}{Performed by}
 
 \testcard{T009}{AC012}{2}{BL029}{VPQ-133}
-         {\shortstack[l]{GIVEN that we have a one motor test rig AND a IMU with a \\
-                         working stabilizing code, WHEN we look at the test rig AND the \\ code is ran, THEN the motor shall stay in specified angle AND if \\ we manually change angle;  the motor shall adjust thrust accordingly.}}
-         {\shortstack[l]{}}
-         {\shortstack[l]{See TR001}}
-         {\shortstack[l]{}}
+         {\shortstack[l]{GIVEN that we have a one motor test rig AND a microcontroller with a \\ working stabilizing code, WHEN we look at the test rig, THEN the motor \\ shall stay in the specified angle AND if we manually change angle;  the \\ motor shall adjust thrust accordingly.}}
+         {\shortstack[l]{Dynamic testing, see TR001.}}
+         {\shortstack[l]{See TR001.}}
+         {\shortstack[l]{Aleksander Holthe \& Vanja Katinka Halvorsen, 22.02.17}}
          
-
-
-
+\testcard{T010}{AC013}{2}{BL033}{VPQ-106 VPQ-107}
+         {\shortstack[l]{GIVEN that we have an Arduino Nano, WHEN we run a script,THEN \\the microcontroller shall complete all computation within 20 ms}}
+         {\shortstack[l]{Dynamic Testing, see TR002}}
+         {\shortstack[l]{See TR002}}
+         {\shortstack[l]{Kent Kjeldaas \& Aleksander Holthe, 22.02.17}}            
