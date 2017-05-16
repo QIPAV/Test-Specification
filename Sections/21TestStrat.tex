@@ -1,24 +1,34 @@
 \section{Test Plan}
 \subsection{Test Strategy}
-For the project an Incremental Testing approach is used. The reason for this is that in Incremental Testing a combination of Bottom-Up and Top-Down Testing is used. Since this is a research project, testing will be divided into two categories; testing for User Stories and testing for research purposes. Research testing is directly related to proving or disproving the hypothesis posed by FFI. Testing User Stories helps to verify that Sprint goals are met. \\
-\\
-At the end of each Sprint there should be a Potentially Shippable Product Increment based on the Sprint Backlog goal. This is significant for the model, because when work is divided into simple pieces it can be finished in a short period of time. To be able to verify a User Story, the specific Acceptance Criteria has to be determine. These are formulated based on the Agile GIVEN, WHEN and THEN-method, also called Gherkin Syntax. This method makes it easy to test small parts of the system. The tests done based on the Acceptance Criteria are often called Unit Tests.\\
-\\
-There will be performed a set of verification tests for the most important User Stories, the tests is passed if the Acceptance Criteria is met. Verification tests helps to determine if the product is built right in accordance to the backlog. \\
-\\
+As mentioned in the introduction, the tests carried out in this project are divided into two main categories. For the project an Incremental Testing approach is used. In Incremental Testing a combination of Bottom-Up and Top-Down Testing is conducted. At the end of each Sprint there should be a Potentially Shippable Product Increment based on the Sprint Backlog goal. To verify a User Story, the specific Acceptance Criteria has to be determined. These are formulated based on the Agile GIVEN, WHEN and THEN-method, also called Gherkin Syntax. This method makes it easy to test small parts of the system. There will be performed a set of verification tests for the most important User Stories, the tests is passed if the Acceptance Criteria is met. Verification tests helps to determine if the product is built right in accordance to the backlog.
+
+For research testing, statistical hypothesis tests are conducted. A hypothesis test is a statistical test that is used to determine whether there is enough evidence in a sample of data to infer that a certain condition is true for the entire population \cite{statistikk3}. For this project the main goal is to gain information about the characteristics of a quadcopter with variable pitch propellers. This is done by comparing it to a quadcopter with fixed pitch propellers. \\
+
+\begin{comment}
+% ref 3
+http://support.minitab.com/en-us/minitab/17/topic-library/basic-statistics-and-graphs/hypothesis-tests/basics/what-is-a-hypothesis-test/
+
+http://blog.minitab.com/blog/adventures-in-statistics-2/understanding-t-tests-t-values-and-t-distributions
+
+http://blog.minitab.com/blog/adventures-in-statistics-2/understanding-t-tests:-1-sample,-2-sample,-and-paired-t-tests
+
+http://stattrek.com/hypothesis-test/difference-in-means.aspx?Tutorial=AP
+\end{comment}
+
+
 \newpage
 
-\subsection{Gherkin Syntax}
-As mentioned earlier, Gherkin Syntax is used to formulate the Acceptance Criteria. The benefit of this approach is that the criteria is written as a human-readable story that describes a wanted behavior, which makes testing easier \cite{ref7}. Gherkin Syntax is often used in software development and testing, but for this project it gives an understandable description of a wanted behaviour for all parts of the system. In Tab. \ref{tab:gherkin} the syntax adopted is explained. 
+\subsubsection{Gherkin Syntax}
+Gherkin Syntax is used to formulate Acceptance Criteria for User Stories. The benefit of this approach is that the criterion is written as a readable story that describes a wanted behavior, which makes testing easier \cite{ref7}. Gherkin Syntax is often used in software development and testing, but for this project it gives an understandable description of a wanted behaviour for all parts of the system. In Tab. \ref{tab:gherkin} the syntax adopted is explained. 
 \begin {table}[h]
     \begin{center}
     \caption {Gherkin Syntax} 
     \label{tab:gherkin} 
     \begin{tabular}{|l|l|}\hline 
-    GIVEN   &   Some Precondition \\ \rowcolor{gainsboro}
-    AND    &   Some Other Precondition        \\
+\rowcolor{white} GIVEN   &   Some Precondition \\ \rowcolor{gainsboro}
+    AND     &   Some Other Precondition        \\
     WHEN    &   Some Action        \\ \rowcolor{gainsboro}
-    AND    &   Yet Another Action        \\
+    AND     &   Yet Another Action        \\
     THEN    &   Some Testable Outcome is Achieved       \\ \rowcolor{gainsboro}
     AND    &   Something else we can Test Happens too.   \\
     \hline
@@ -26,9 +36,7 @@ As mentioned earlier, Gherkin Syntax is used to formulate the Acceptance Criteri
     \end{center}
 \end{table}
 \\
-From this syntax a Test Case with a testable Acceptance Criteria is created. An Acceptance Criterion relates back to the User Story, the User Story relates back to a Product Backlog Item, and the Product Backlog Item relates back to a need of the customer.\\
-\\
-In Fig. \ref{fig:ACmatrix} the current Acceptance Criteria Matrix for this project is displayed. (See TraceabilityMatrix_Ver3.0.xlsx on USB for full version).
+From this syntax a Test Case with a testable Acceptance Criteria is created. An Acceptance Criterion relates back to the User Story, the User Story relates back to a Product Backlog Item, and the Product Backlog Item. In Fig. \ref{fig:ACmatrix} the Acceptance Criteria Matrix for this project is displayed. \\\\(See TraceabilityMatrix\_Ver3.0.xlsx on USB for full version).
 
 \begin{figure}[h]
     \centering
@@ -40,7 +48,7 @@ In Fig. \ref{fig:ACmatrix} the current Acceptance Criteria Matrix for this proje
 
 \newpage
 
-\subsection {Test Setup}
+\subsubsection {Test Case Setup}
 The template presented below functions as a Verification record where the Acceptance Criterion is tested. This represents the Test Case where each card states a unique test ID. The Test Case displays which Acceptance Criteria, Backlog Item and Jira ID it relates to and in which Sprint the Acceptance Criteria has been fulfilled. It also displays which Verification Procedures are used and the results of the tests. The Test Cases have been given an ID in the form of TXXX, where the XXX will be numbers. Each Test Case will be enumerated chronologically as the project progresses. \\
 \\
 \testcard{TXXX}{ACXXX}{X}{BLXXX}{VPQ-XX}
@@ -49,17 +57,20 @@ The template presented below functions as a Verification record where the Accept
          {\shortstack[l]{TRXXX}}
          {\shortstack[l]{}}
 
-\subsubsection{Verification Procedure}
+\subsubsection*{Verification Procedure}
 In the Verification Procedure row shown above the test method is stated and a procedure for testing is generated. Sometimes a Static Testing approach will be implemented and other times a Dynamic. 
 \\
-\subsubsection{Results and Reports}
-Test Cases are easily executed because of Gherkin Syntax, but some tests are more extensive and demands a more detailed procedure. In these situations a Test Report is generated. The Test Report will be referred to in the Result(s)/Report(s) row as shown in the template above. The Test Report has been given an ID in the form of TRXXX, where the XXX will be numbers. Each Test Report will be enumerated chronologically as the project progresses. \\ 
+\subsubsection*{Results and Reports}
+In the Result(s)/Reports(s) row the outcome of the test is stated. Some tests are more extensive and demands a more detailed procedure. In these situations a Test Report is generated. The Test Report will be referred to in the Result(s)/Report(s) row as shown in the template above. The Test Report has been given an ID in the form of TRXXX, where the XXX will be numbers. Each Test Report is enumerated chronologically as the project progresses. \\ 
 \\
+\begin{comment}
 The test results are crucial to be able to verify our system and research. The test results gives us feedback if something is or is not functioning as the Acceptance Criteria specifies. Continuous testing of every criterion will help the verification of the system. \\
+\end{comment}
+
 \newpage
 
-\subsection{Test Traceability Matrix}
-In Fig. \ref{fig:Tmatrix} the current Test Traceability Matrix for this project is displayed.\\\\ (See TraceabilityMatrix\_Ver3.0.xlsx on USB for full version).
+\subsubsection*{Test Traceability Matrix}
+In Fig. \ref{fig:Tmatrix} the Test Traceability Matrix for this project is displayed.\\\\ (See TraceabilityMatrix\_Ver3.0.xlsx on USB for full version).
 
 \begin{figure}[h]
     \centering
@@ -70,8 +81,8 @@ In Fig. \ref{fig:Tmatrix} the current Test Traceability Matrix for this project 
 
 \newpage
 
-\subsection{Test Processes}
-In Fig. \ref{fig:testsetup} a simple illustration of how the Verification Test process works for one Product Backlog Item. The Test Cases and Test Reports will include all the information needed for verification of the project.\\
+\subsubsection*{Test Processes}
+In Fig. \ref{fig:testsetup} a simple illustration of how the Verification Test process works for one Product Backlog Item. The Test Cases and Test Reports will include all the information needed for verification of the User Story.\\
 \\
 \begin{figure}[h]
     \centering

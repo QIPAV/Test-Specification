@@ -1,4 +1,4 @@
-\section{Test Reports}
+\section{Test Reports for User Stories}
 \subsection{TR001: One Motor Test Rig}
 \tr{T008}{AC008}{2}{BL012}{VPQ-21}
          {\shortstack[l]{GIVEN that we have a one motor test rig AND a microcontroller with a \\ working stabilizing code, WHEN we look at the test rig, THEN the \\motor  shall stay in the specified angle AND if we manually change angle; \\ the  motor shall adjust thrust accordingly.}}
@@ -254,7 +254,7 @@ In Tab. \ref{tab:tabt6} and \ref{tab:tabt7} the equipment used conducting TR005 
 \noindent In Fig. \ref{fig:TestSetup5} an illustration of the test setup for the test rig is displayed.
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.6\textwidth]{VAPIQ-PICTURES/TestSetup5}
+    \includegraphics[width = 0.6\textwidth]{VAPIQ-PICTURES/ThrustTestRig}
     \caption{Test Setup: Motor Propeller Thrust Test Rig}
     \label{fig:TestSetup5}
 \end{figure}
@@ -330,7 +330,7 @@ In Tab. \ref{tab:tabt8} and \ref{tab:tabt9} the equipment used conducting TR007 
 \noindent In Fig. \ref{fig:VPM} the test setup for TR007 is displayed.
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.6\textwidth]{VAPIQ-PICTURES/TestSetup7}
+    \includegraphics[width = 0.6\textwidth]{VAPIQ-PICTURES/TestSetupGramsPerW}
     \caption{Test Setup: Variable Pitch Test}
     \label{fig:VPM}
 \end{figure}
@@ -356,13 +356,13 @@ When a stronger servo was mounted to the 3DR motor and Align mechanism; it was s
 In Fig. \ref{fig:vpm1} and \ref{fig:vpm2} the result from this test is displayed. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.65\textwidth]{VAPIQ-PICTURES/VPM1}
+    \includegraphics[width = 0.62\textwidth]{VAPIQ-PICTURES/3DRxx}
     \caption{3DR Motor Efficiency: Variable Pitch Test}
     \label{fig:vpm1}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.65\textwidth]{VAPIQ-PICTURES/VPM2}
+    \includegraphics[width = 0.62\textwidth]{VAPIQ-PICTURES/Axi2}
     \caption{AXI Motor Efficiency: Variable Pitch Test}
     \label{fig:vpm2}
 \end{figure}
@@ -374,3 +374,131 @@ In Fig.\ref{fig:vpm2} it can be seen that the maximum efficiency for the AXI mot
 \\
 Full test result matrix for TR007 can be found in Appendix B2.
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{TR008: Variable Pitch RC Flight Controller Loop time}
+\tr{T0XX}{AC0XX}{8}{BL0XX}{VPQ-XXX}
+         {\shortstack[l]{GIVEN that we have a complete Flight Controller with RC implemented\\ on an Arduino Nano, WHEN code is running, THEN one loop cycle shall \\ be completed within 4 ms.\\ }}
+
+\subsubsection*{\textsc{\medium Purpose}}
+The purpose of TR008 is to determine if the Arduino Nano can complete all computations needed to complete one loop cycle in 4 ms.
+
+\subsubsection*{\textsc{\medium Test Setup}}
+In Tab. \ref{tab:tabt10} the equipment used conducting TR008 is displayed. 
+\begin {table}[H]
+    \begin{center}
+    \caption {Test Equipment: Arduino Nano Loop Cycle} 
+    \label{tab:tabt10} 
+    \begin{tabular}{|l|l|}\hline 
+        Variable Pitch Quadcopter     \\ \hline
+        LED  \\ \hline
+        Oscilloscope  \\ \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+The test is conducted by running the quadcopter's code and at the beginning of the loop a LED is set high, and at the end of the loop, low. To measure the computation  time; an oscilloscopes measuring probe was connected to the LED.\\
+\\
+In Appendix AX the code used for TR008 can be found. \\
+\\
+The Variable Pitch Quadcopter has all components mounted as the circuit diagram shown in Fig. \ref{fig:vpm1}. \\
+\\
+**INSERT CIRCUIT DIAGRAM**
+
+\subsubsection*{\textsc{\medium Test Assessment}}
+% [Enter a comprehensive assessment of your interpretation of how adequate the test was in light of how thorough the test plan said it should be? What wasn't tested well enough?]
+%[Describe any variances between the testing that was planned and the testing that actually occurred.  Also, provide an assessment of the manner in which the test environment may be different from the operational environment and the effect of this difference on the test results
+%[Provide a brief description of the unexpected results, problems, or defects that occurred during the testing.]
+The control loop is set to run on 250 Hz. The code for the Variable Pitch Quadcopter is set to always use 4 ms to complete. If it uses less than 4 ms the loop will wait until the time has reached 4 ms.
+
+\subsubsection*{\textsc{\medium Test Results}}
+In Fig. \ref{fig:4ms1} and \ref{fig:4ms2} we see that the loop needs 4.02 ms to be completed. From the measurements displayed on the oscilloscope during this test, the loop time differentiated with \pm0.03.
+
+\begin{figure}[H]
+        \centering
+         \begin{minipage}[b]{0.45\textwidth}
+            \includegraphics[width = 1\textwidth]{VAPIQ-PICTURES/4ms1}
+              \caption{Oscilloscope 1.0 ms/square}
+            \label{fig:4ms1}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.45\textwidth}
+            \includegraphics[width = \textwidth]{VAPIQ-PICTURES/4ms2}
+            \caption{Oscilloscope 0.5 ms/square}
+            \label{fig:4ms2}
+        \end{minipage}
+\end{figure}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{TR009: Qualisys Area Boundary}
+\tr{T0XX}{AC0XX}{8}{BL0XX}{VPQ-XXX}
+         {\shortstack[l]{GIVEN that we have defined a boundary area in Qualisys, WHEN \\ quadcopter crosses boundary line, THEN data transmission shall initiate \\ landing process. }}
+
+\subsubsection*{\textsc{\medium Purpose}}
+The purpose for TR009 is to identify the boundaries for the autonomous flight for the Variable Pitch Quadcopter.
+
+\subsubsection*{\textsc{\medium Test Setup}}
+This test is conducted at KONGSBERG Innovation Center in Qualisys Motion Tracking System. For more information about the MOCAP-system see XX. In Fig. ref{INSERT FIG} we see the area the quadcopter is aloud to move within. \\
+\\
+
+***INSER FIGURE***
+
+For the first test the Variable Pitch Quadcopter is inactive. It is manually manoeuvred in the defined test area. When quadcopter is moved outside the boundary defined; the quadcopter shall initiate landing process.\\
+\\
+In Appendix AX the code used for TR009 can be found. \\
+\\
+For the second test the quadcopter is active and it will receive position data from Qualisys. When the VPQ receives the position data it shall move to the desired position. In this test this will be a movement i z-axis. The VPQ will start on plane surface and move 1.5 meters upwards (with a rate of SOMETHING m/s). When position is reached the VPQ shall stay in desired position for 10 seconds before landing process is initiated. 
+
+\subsubsection*{\textsc{\medium Test Assessment}}
+% [Enter a comprehensive assessment of your interpretation of how adequate the test was in light of how thorough the test plan said it should be? What wasn't tested well enough?]
+%[Describe any variances between the testing that was planned and the testing that actually occurred.  Also, provide an assessment of the manner in which the test environment may be different from the operational environment and the effect of this difference on the test results
+%[Provide a brief description of the unexpected results, problems, or defects that occurred during the testing.]
+The safety net installed at KONGSBERG Innovation Center may present some interference for the position of the VPQ. The net have to be properly distributed around the room to decrease the level of interference.
+
+\subsubsection*{\textsc{\medium Test Results}}
+BLABLABLA
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{TR010: Simulated Variable Pitch Thrust Response}
+\tr{T0XX}{AC0XX}{8}{BL0XX}{VPQ-XXX}
+         {\shortstack[l]{GIVEN that we have a linearized motor propeller model AND the \\ system is implemented in Simulink, WHEN the simulation is running, \\THEN the  systems thrust response shall be plotted in a graph.}}
+
+\subsubsection*{\textsc{\medium Purpose}}
+The purpose of TR010 is to gain information regarding the response time when pitch is adjusted to achieve desired thrust versus increasing the thrust by increasing the voltage.
+
+\subsubsection*{\textsc{\medium Test Setup}}
+This test is performed by implementing a matlab script with the derived and estimated values for the motor propeller system. This matlab script is used along with a simulink block diagram. The structure of the block diagram i displayed in Fig. ref{INSERT FIG}. To full deviation of the motor propeller model is displayed in XX.\\
+\\
+***INSER FIGURE***
+\\
+For this experiment we assume a fixed rpm $(\omega_0)$ along a fixed starting pitch  $(\alpha_0)$. 
+$$\omega_0 = 730 rad/s$$
+$$\alpha_0 = 2.5 angle$$
+Then desired steps are applied to ($\Delta v$) and ($\Delta \alpha$).\\
+\\
+In Appendix AX the matlab script used for TR010 can be found. In Appendix BX the simulink block diagram is displayed.\\
+\\
+
+\subsubsection*{\textsc{\medium Test Assessment}}
+% [Enter a comprehensive assessment of your interpretation of how adequate the test was in light of how thorough the test plan said it should be? What wasn't tested well enough?]
+%[Describe any variances between the testing that was planned and the testing that actually occurred.  Also, provide an assessment of the manner in which the test environment may be different from the operational environment and the effect of this difference on the test results
+%[Provide a brief description of the unexpected results, problems, or defects that occurred during the testing.]
+The motor propeller model used for this experiment is simplified adaptation of the real physical model of the VPQ. From this simplification the response might differ from reality. 
+
+\subsubsection*{\textsc{\medium Test Results}}
+From Fig. ref{INSERT FIG} we see the step response for a step in pitch versus a step step in voltage. From this figure we see that it takes a shorter amount of time to for the motor to produce the desired thrust when pitch us changed versus the voltage.
+\\
+***INSERT FIGURE***
+\\
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
